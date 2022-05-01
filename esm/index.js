@@ -1,4 +1,24 @@
-import { image1, image2, screen, multiply } from "./imageFunctions.js";
+import {
+  image1,
+  image2,
+  r2g1b1,
+  r1g2b1,
+  r1g1b2,
+  r2g2b1,
+  r2g1b2,
+  r1g2b2,
+  addition,
+  subtract,
+  inverseSubtract,
+  difference,
+  inverseDifference,
+  multiply,
+  divide,
+  inverseDivide,
+  screen,
+  lighten,
+  darken,
+} from "./imageFunctions.js";
 
 let funcToRun = null;
 
@@ -34,12 +54,76 @@ const processImage = function () {
       image2(data, data2);
       break;
 
+    case "r2g1b1":
+      r2g1b1(data, data2);
+      break;
+
+    case "r1g2b1":
+      r1g2b1(data, data2);
+      break;
+
+    case "r1g1b2":
+      r1g1b2(data, data2);
+      break;
+
+    case "r2g2b1":
+      r2g2b1(data, data2);
+      break;
+
+    case "r1g2b2":
+      r1g2b2(data, data2);
+      break;
+
+    case "r2g1b2":
+      r2g1b2(data, data2);
+      break;
+
+    case "addition":
+      addition(data, data2);
+      break;
+
+    case "subtract":
+      subtract(data, data2);
+      break;
+
+    case "inverseSubtract":
+      inverseSubtract(data, data2);
+      break;
+
+    case "difference":
+      difference(data, data2);
+      break;
+
+    case "inverseDifference":
+      inverseDifference(data, data2);
+      break;
+
     case "multiply":
       multiply(data, data2);
       break;
 
+    case "divide":
+      divide(data, data2);
+      break;
+
+    case "inverseDivide":
+      inverseDivide(data, data2);
+      break;
+
     case "screen":
       screen(data, data2);
+      break;
+
+    case "lighten":
+      lighten(data, data2);
+      break;
+
+    case "darken":
+      darken(data, data2);
+      break;
+
+    default:
+      alert("no function specified!");
       break;
   }
 
@@ -63,7 +147,7 @@ const loadImage = function () {
 
   setTimeout(() => {
     processImage();
-  }, 200);
+  }, 100);
 };
 
 const startDemo = function (event) {

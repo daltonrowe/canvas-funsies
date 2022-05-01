@@ -23,12 +23,16 @@ canvas {
   margin: 20px 0;
 }
 
-#buttons {
+.buttons-wrap {
+  margin:10px auto;
+  width:1000px;
   display:flex;
+  flex-wrap: wrap;
 }
 
 button {
   margin:2px 5px;
+  width:200px;
 }
 
 #test-image {
