@@ -1,0 +1,33 @@
+body {
+  background: #eee;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  width: 500px;
+  height: 500px;
+  border: 1px solid grey;
+  background: white;
+}
+
+#canvas-window {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+#start {
+  width: 200px;
+  padding: 20px;
+}
+
+#test-image {
+  margin-top: 20px;
+}
