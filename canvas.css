@@ -23,9 +23,12 @@ canvas {
   margin: 20px 0;
 }
 
-#start {
-  width: 200px;
-  padding: 20px;
+#buttons {
+  display:flex;
+}
+
+button {
+  margin:2px 5px;
 }
 
 #test-image {

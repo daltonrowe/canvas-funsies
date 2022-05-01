@@ -1,17 +1,16 @@
-const rootEl = document.querySelector("#root");
+import { image1, image2, screen, multiply } from "./imageFunctions.js";
+
+let funcToRun = null;
+
 const canvasOne = document.querySelector("#canvas-one");
 const canvasTwo = document.querySelector("#canvas-two");
 const canvasThree = document.querySelector("#canvas-three");
-
-const startEl = document.querySelector("#start");
 
 const contextOne = canvasOne.getContext("2d");
 const contextTwo = canvasTwo.getContext("2d");
 const contextThree = canvasThree.getContext("2d");
 
-const randomInRange = function (max) {
-  return Math.floor(Math.random() * max);
-};
+const startEls = document.querySelectorAll(".start");
 
 const drawNewImage = function (imageData) {
   contextThree.putImageData(imageData, 0, 0);
@@ -24,30 +23,27 @@ const processImage = function () {
   const data = imageData.data;
   const data2 = imageData2.data;
 
-  const start = new Date().getTime();
-  console.log("starting");
+  console.time(funcToRun);
 
-  for (let i = 0; i < data.length; i += 4) {
-    const rPerc = data[i] / 255;
-    const gPerc = data[i + 1] / 255;
-    const bPerc = data[i + 2] / 255;
+  switch (funcToRun) {
+    case "image1":
+      image1(data, data2);
+      break;
 
-    const rPerc2 = data2[i] / 255;
-    const gPerc2 = data2[i + 1] / 255;
-    const bPerc2 = data2[i + 2] / 255;
+    case "image2":
+      image2(data, data2);
+      break;
 
-    const rOut = rPerc2 * rPerc;
-    const gOut = gPerc2 * gPerc;
-    const bOut = bPerc2 * bPerc;
+    case "multiply":
+      multiply(data, data2);
+      break;
 
-    data[i] = rOut * 255; // r
-    data[i + 1] = gOut * 255; // g
-    data[i + 2] = bOut * 255; // b
+    case "screen":
+      screen(data, data2);
+      break;
   }
 
-  const finish = new Date().getTime();
-  const elapsed = finish - start;
-  console.log("done", elapsed);
+  console.timeEnd(funcToRun);
 
   drawNewImage(imageData);
 };
@@ -62,13 +58,19 @@ const loadImage = function () {
   const img2 = new Image();
   img2.onload = function () {
     contextTwo.drawImage(img2, 0, 0, 500, 500);
-    processImage();
   };
   img2.src = "img/test2.png";
+
+  setTimeout(() => {
+    processImage();
+  }, 200);
 };
 
-const startDemo = function () {
+const startDemo = function (event) {
+  funcToRun = event.target.dataset.imageFunction;
   loadImage();
 };
 
-startEl.addEventListener("click", startDemo);
+startEls.forEach((el) => {
+  el.addEventListener("click", startDemo);
+});

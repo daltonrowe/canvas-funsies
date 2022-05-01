@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,8 +15,14 @@
         <canvas id="canvas-two" width="500" height="500"></canvas>
         <canvas id="canvas-three" width="500" height="500"></canvas>
       </div>
-      <button id="start">Start</button>
+
+      <div id="buttons">
+        <button class="start" data-image-function="image1">None (image1)</button>
+        <button class="start" data-image-function="image2">None (image2)</button>
+        <button class="start" data-image-function="multiply">Multiply</button>
+        <button class="start" data-image-function="screen">Screen</button>
+      </div>
     </div>
-    <script type="module" src="./esm/screen.js"></script>
+    <script type="module" src="./esm/index.js"></script>
   </body>
 </html>
