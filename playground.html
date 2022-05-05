@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Tricks</title>
+
+    <link rel="stylesheet" href="playground.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="canvas-window">
+        <canvas id="canvas-one" width="500" height="500"></canvas>
+        <canvas id="canvas-two" width="500" height="500"></canvas>
+        <canvas id="canvas-three" width="500" height="500"></canvas>
+      </div>
+
+      <div class="config">
+        <span
+          >R:
+          <select name="rSelect" id="rSelect"></select>
+        </span>
+
+        <span
+          >G:
+          <select name="gSelect" id="gSelect"></select>
+        </span>
+
+        <span
+          >B:
+          <select name="bSelect" id="bSelect"></select>
+        </span>
+      </div>
+
+      <button id="run">Run</button>
+
+      <span class="setAll"
+        >Set All:
+        <select name="setAll" id="setAll"></select>
+      </span>
+    </div>
+    <script type="module" src="./esm/playground.js"></script>
+  </body>
+</html>
