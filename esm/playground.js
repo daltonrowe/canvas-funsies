@@ -9,6 +9,8 @@ const modes = [
   "inverse-divide",
   "lighten",
   "darken",
+  "screen",
+  "overlay",
   "random",
   "0",
   "128",
@@ -72,6 +74,14 @@ const applyMode = function (mode, data, data2) {
 
     case "darken":
       return data < data2 ? data : data2;
+
+    case "screen":
+      return (1 - (1 - perc) * (1 - perc2)) * 255;
+
+    case "overlay":
+      return perc < 0.5
+        ? perc * perc2 * 255
+        : (1 - 2 * (1 - perc2) * (1 - perc)) * 255;
 
     case "random":
       return randomInRange(255);
