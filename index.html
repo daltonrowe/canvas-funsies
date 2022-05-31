@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Canvas Tricks</title>
 
-    <link rel="stylesheet" href="canvas.css" />
+    <link rel="stylesheet" href="playground.css" />
   </head>
   <body>
     <div id="root">
@@ -16,51 +16,30 @@
         <canvas id="canvas-three" width="500" height="500"></canvas>
       </div>
 
-      <h2>Blend Modes</h2>
+      <div class="config">
+        <span
+          >R:
+          <select name="rSelect" id="rSelect"></select>
+        </span>
 
-      <div class="buttons-wrap">
-        <button class="start" data-image-function="image1">
-          None (image1)
-        </button>
-        <button class="start" data-image-function="image2">
-          None (image2)
-        </button>
+        <span
+          >G:
+          <select name="gSelect" id="gSelect"></select>
+        </span>
+
+        <span
+          >B:
+          <select name="bSelect" id="bSelect"></select>
+        </span>
       </div>
 
-      <div class="buttons-wrap">
-        <button class="start" data-image-function="r2g1b1">r2g1b1</button>
-        <button class="start" data-image-function="r1g2b1">r1g2b1</button>
-        <button class="start" data-image-function="r1g1b2">r1g1b2</button>
-        <button class="start" data-image-function="r2g2b1">r2g2b1</button>
-        <button class="start" data-image-function="r1g2b2">r1g2b2</button>
-        <button class="start" data-image-function="r2g1b2">r2g1b2</button>
-      </div>
+      <button id="run">Run</button>
 
-      <div class="buttons-wrap">
-        <button class="start" data-image-function="addition">Addition</button>
-        <button class="start" data-image-function="subtract">Subtract</button>
-        <button class="start" data-image-function="inverseSubtract">
-          Inverse Subtract
-        </button>
-        <button class="start" data-image-function="difference">
-          Difference
-        </button>
-
-        <button class="start" data-image-function="inverseDifference">
-          Inverse Difference
-        </button>
-        <button class="start" data-image-function="multiply">Multiply</button>
-        <button class="start" data-image-function="divide">Divide</button>
-        <button class="start" data-image-function="inverseDivide">Inverse Divide</button>
-
-      </div>
-
-      <div class="buttons-wrap">
-        <button class="start" data-image-function="screen">Screen</button>
-        <button class="start" data-image-function="lighten">Lighten</button>
-        <button class="start" data-image-function="darken">Darken</button>
-      </div>
+      <span class="setAll"
+        >Set All:
+        <select name="setAll" id="setAll"></select>
+      </span>
     </div>
-    <script type="module" src="./esm/index.js"></script>
+    <script type="module" src="./playground.js"></script>
   </body>
 </html>
